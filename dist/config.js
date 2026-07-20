@@ -1,4 +1,7 @@
 process.loadEnvFile();
+export const migrationConfig = {
+    migrationsFolder: "./src/db/migrations",
+};
 function envOrThrow(key) {
     const value = process.env[key];
     if (!value) {
@@ -10,4 +13,5 @@ function envOrThrow(key) {
 export const config = {
     fileserverHits: 0,
     dbURL: envOrThrow("DB_URL"),
+    migrationConfig: migrationConfig,
 };
