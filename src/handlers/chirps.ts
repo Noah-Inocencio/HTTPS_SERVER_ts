@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { respondWithJson } from "./.json.js";
-import { LengthError } from "./errors.js";
+import { respondWithJson } from "../lib/json.js";
+import { LengthError } from "../lib/errors.js";
 
 export async function validateChirp(req: Request, res: Response) {
    type responseData = {

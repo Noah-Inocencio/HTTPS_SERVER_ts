@@ -9,7 +9,3 @@ export default defineConfig({
     url: "psql://ninocencio:@localhost:5432/chirpy?sslmode=disable",
   },
 });
-
-export const migrationConfig: MigrationConfig = {
-   migrationsFolder: "./src/db/migrations",
-};

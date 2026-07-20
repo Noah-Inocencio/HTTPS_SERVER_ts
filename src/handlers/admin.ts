@@ -1,5 +1,5 @@
-import { application, Request, Response } from "express";
-import { config } from '../config.js'
+import { Request, Response } from "express";
+import { config } from "../config.js";
 
 export function handlerMetric(_: Request, res: Response) {
    res.set("Content-Type", "text/html; charset=utf-8");
@@ -9,4 +9,10 @@ export function handlerMetric(_: Request, res: Response) {
     <p>Chirpy has been visited ${config.fileserverHits} times!</p>
   </body>
 </html>`);
+}
+
+export function resetCounter(_: Request, res: Response) {
+   config.fileserverHits = 0;
+   res.set("Content-Type", "text/plain; charset=utf-8");
+   res.send("Reset counter");
 }
