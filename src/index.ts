@@ -8,7 +8,7 @@ import postgres from "postgres";
 import { migrate } from "drizzle-orm/postgres-js/migrator";
 import { drizzle } from "drizzle-orm/postgres-js";
 import { config } from "./config.js"
-import { db } from "./db/index.js"
+import { handleNewUser } from "./api/users/user.js";
 
 const migrationClient = postgres(config.dbURL, { max: 1 });
 await migrate(drizzle(migrationClient), config.migrationConfig);
@@ -24,6 +24,7 @@ app.get("/api/healthz", handlerReadiness);
 app.get("/admin/metrics", handlerMetric);
 app.post("/admin/reset", resetCounter);
 app.post("/api/validate_chirp", validateChirp);
+app.post("/api/users/", handleNewUser);
 app.use(middlewareErrorHandler);
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
