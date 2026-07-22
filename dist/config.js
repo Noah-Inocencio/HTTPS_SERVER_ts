@@ -12,6 +12,7 @@ function envOrThrow(key) {
 /* API config object that will count server hits */
 export const config = {
     fileserverHits: 0,
+    platform: envOrThrow("PLATFORM"),
     dbURL: envOrThrow("DB_URL"),
     migrationConfig: migrationConfig,
 };

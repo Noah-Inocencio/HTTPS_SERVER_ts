@@ -8,6 +8,7 @@ export const migrationConfig: MigrationConfig = {
 
 type APIConfig = {
    fileserverHits: number;
+   platform: string;
 };
 
 type DBConfig = {
@@ -26,6 +27,7 @@ function envOrThrow(key: string): string {
 /* API config object that will count server hits */
 export const config: APIConfig & DBConfig = {
    fileserverHits: 0,
+   platform: envOrThrow("PLATFORM"),
    dbURL: envOrThrow("DB_URL"),
    migrationConfig: migrationConfig,
 };

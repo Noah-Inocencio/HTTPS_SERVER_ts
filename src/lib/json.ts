@@ -1,4 +1,4 @@
-import { Response, Request } from "express";
+import { Response } from "express";
 
 export function respondWithJson(res: Response, statusCode: number, payload: object) {
    res.header("Content-Type", "application/json");
