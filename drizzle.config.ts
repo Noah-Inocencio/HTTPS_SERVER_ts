@@ -6,6 +6,6 @@ export default defineConfig({
   out: "src/db/migrations",
   dialect: "postgresql",
   dbCredentials: {
-    url: "psql://ninocencio:@localhost:5432/chirpy?sslmode=disable",
+    url: "postgresql://ninocencio:@localhost:5432/chirpy?sslmode=disable",
   },
 });

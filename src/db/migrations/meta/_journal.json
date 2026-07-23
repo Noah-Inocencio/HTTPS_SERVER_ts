@@ -8,6 +8,13 @@
       "when": 1784438321245,
       "tag": "0000_fresh_vermin",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1784836629158,
+      "tag": "0001_icy_blue_blade",
+      "breakpoints": true
     }
   ]
 }
